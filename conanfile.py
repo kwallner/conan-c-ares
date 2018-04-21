@@ -48,7 +48,8 @@ CONAN_BASIC_SETUP()
 
     def package(self):
         self.copy("*LICENSE*", dst="", keep_path=False)
-
+        self.copy("%s/nameser.h" % self.folder_name, dst="include/ares", keep_path=False)
+        
     def package_info(self):
         self.cpp_info.libs.append("cares")
         if not self.options.shared:
@@ -56,3 +57,4 @@ CONAN_BASIC_SETUP()
         if self.settings.os == "Windows":
             # self.cpp_info.libs[0] += "d"
             self.cpp_info.libs.append("ws2_32")
+        self.env_info.__setattr__('c-ares_DIR', self.package_folder)
