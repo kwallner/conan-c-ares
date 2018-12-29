@@ -4,7 +4,7 @@ from conans import ConanFile, CMake, tools
 
 class CAresConan(ConanFile):
     name = "c-ares"
-    version = "1.14.0"
+    version = "1.15.0"
     license = "MIT"
     url = "<Package recipe repository url here, for issues about the package>"
     description = "A C library for asynchronous DNS requests"
